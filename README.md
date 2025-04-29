@@ -1,0 +1,37 @@
+# Terraform AWS Modular Template
+
+This repository provides a modular, reusable Terraform template for provisioning
+minimal AWS infrastructure (VPC, EC2, RDS) using the free tier as much as
+possible. It is designed for quick project setup and easy reuse.
+
+## Structure
+
+- `main.tf` - Root configuration, calls modules
+- `variables.tf` - Input variables
+- `outputs.tf` - Useful outputs
+- `backend.tf` - S3 backend for remote state
+- `modules/vpc` - VPC, subnets, and networking
+- `modules/ec2` - EC2 instance
+- `modules/rds` - RDS instance
+
+## Usage
+
+1. **Configure backend**: Edit `backend.tf` with your S3 bucket and DynamoDB table for state locking.
+2. **Set variables**: Edit `terraform.tfvars` or use environment variables.
+3. **Initialise and apply**:
+
+   ```sh
+   terraform init
+   terraform plan
+   terraform apply
+   ```
+
+## Free Tier Defaults
+
+- EC2: t2.micro
+- RDS: db.t3.micro (or free-tier eligible)
+- Minimal resources to avoid costs
+
+---
+
+Customise modules as needed for your project!
