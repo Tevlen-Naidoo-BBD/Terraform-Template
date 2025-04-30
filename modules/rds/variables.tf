@@ -21,7 +21,7 @@ variable "aws_region" {
 variable "enabled" {
   description = "Whether to create the RDS instance"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "db_password" {

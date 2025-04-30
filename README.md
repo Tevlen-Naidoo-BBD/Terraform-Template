@@ -21,7 +21,7 @@ possible. It is designed for quick project setup and easy reuse.
 3. **Initialise and apply**:
 
    ```sh
-   terraform init
+   terraform init -backend-config="backed.config"
    terraform plan
    terraform apply
    ```
