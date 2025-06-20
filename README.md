@@ -13,6 +13,7 @@ possible. It is designed for quick project setup and easy reuse.
 - `modules/vpc` - VPC, subnets, and networking
 - `modules/ec2` - EC2 instance
 - `modules/rds` - RDS instance
+- `modules/budget` - Budgeting alerts
 
 ## Usage
 
@@ -28,7 +29,7 @@ possible. It is designed for quick project setup and easy reuse.
 
 ## Free Tier Defaults
 
-- EC2: t2.micro
+- EC2: t3.micro
 - RDS: db.t3.micro (or free-tier eligible)
 - Minimal resources to avoid costs
 
