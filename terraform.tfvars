@@ -16,5 +16,9 @@ ec2_instance_count = 1
 
 # RDS settings
 rds_enabled = true
-# db_password = "yourStrongPostgresPasswordHere"
-# ^ Uncomment and set, or use TF_VAR_db_password env variable 
+db_username = "yourNameForTheDb"
+db_password = "yourStrongPasswordHere"
+db_name     = "yourDbName"
+
+# Budget settings
+budget_emails = ["example@example.com"]

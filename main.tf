@@ -25,3 +25,9 @@ module "rds" {
   aws_region             = var.aws_region
   enabled                = var.rds_enabled
 }
+
+module "budget" {
+  source       = "./modules/budget"
+  project_name = var.project_name
+  budget_emails = var.budget_emails
+}
