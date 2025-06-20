@@ -17,7 +17,7 @@ possible. It is designed for quick project setup and easy reuse.
 
 ## Usage
 
-1. **Configure backend**: Edit `backend.tf` with your S3 bucket and DynamoDB table for state locking.
+1. **Configure backend**: Edit `backend.tf` with your S3 bucket.
 2. **Set variables**: Edit `terraform.tfvars` or use environment variables.
 3. **Initialise and apply**:
 
