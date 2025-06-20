@@ -29,3 +29,18 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+variable "db_username" {
+  description = "Username for the PostgreSQL master user. Set via tfvars or TF_VAR_db_username environment variable."
+  type        = string
+}
+
+variable "db_name" {
+  description = "The name of the database"
+  type        = string
+}
+
+variable "publicly_accessible" {
+  description = "Whether the RDS instance should be publicly accessible"
+  type        = bool
+  default     = false
+}

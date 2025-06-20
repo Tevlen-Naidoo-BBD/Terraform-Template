@@ -47,9 +47,44 @@ variable "ec2_instance_count" {
   default     = 1
 }
 
+variable "key_name" {
+  description = "The name of the key pair to associate with the EC2 instance."
+  type        = string
+  default     = null
+}
+
 # RDS module variables
 variable "rds_enabled" {
   description = "Whether to create an RDS instance"
   type        = bool
   default     = true
+}
+
+variable "db_password" {
+  description = "Password for the PostgreSQL master user. Set via tfvars or TF_VAR_db_password environment variable."
+  type        = string
+  sensitive   = true
+}
+
+variable "db_username" {
+  description = "Username for the PostgreSQL master user. Set via tfvars or TF_VAR_db_username environment variable."
+  type        = string
+}
+
+variable "db_name" {
+  description = "The name of the database"
+  type        = string
+}
+
+variable "publicly_accessible" {
+  type        = bool
+  default     = false
+  description = "Whether the RDS instance should be publicly accessible"
+}
+
+# Budget module variables
+
+variable "budget_emails" {
+  description = "List of email addresses to receive AWS budget alerts"
+  type        = list(string)
 }
