@@ -1,5 +1,6 @@
 provider "aws" {
-  region = var.aws_region
+  version = "~> 6.0"
+  region  = var.aws_region
 }
 
 module "vpc" {
@@ -11,13 +12,13 @@ module "vpc" {
 }
 
 module "ec2" {
-  source         = "./modules/ec2"
-  project_name   = var.project_name
-  subnet_id      = module.vpc.public_subnet_id
-  instance_count = var.ec2_instance_count
-  aws_region     = var.aws_region
+  source            = "./modules/ec2"
+  project_name      = var.project_name
+  subnet_id         = module.vpc.public_subnet_id
+  instance_count    = var.ec2_instance_count
+  aws_region        = var.aws_region
   security_group_id = module.vpc.default_security_group_id
-  key_name = var.key_name
+  key_name          = var.key_name
 }
 
 module "rds" {
@@ -34,7 +35,7 @@ module "rds" {
 }
 
 module "budget" {
-  source       = "./modules/budget"
-  project_name = var.project_name
+  source        = "./modules/budget"
+  project_name  = var.project_name
   budget_emails = var.budget_emails
 }
